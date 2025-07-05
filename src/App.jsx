@@ -2,15 +2,19 @@ import React, { useState, useEffect } from 'react';
 import TaskForm from './components/TaskForm';
 import TaskList from './components/TaskList';
 import FilterBar from './components/FilterBar';
+import Login from './components/Login';
 import { loadTasks, saveTasks } from './utils/storage';
 import './styles.css';
 
 const App = () => {
   const [tasks, setTasks] = useState([]);
   const [filter, setFilter] = useState({ category: '', deadline: '' });
+  const [taskToEdit, setTaskToEdit] = useState(null);
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
 
   useEffect(() => {
-    setTasks(loadTasks());
+    const auth = localStorage.getItem('loggedIn');
+    if (auth === 'true') setIsLoggedIn(true);
   }, []);
 
   useEffect(() => {
@@ -37,17 +41,33 @@ const App = () => {
     setTasks(prev => prev.map(t => t.id === id ? { ...t, completed: !t.completed } : t));
   };
 
+  const handleLogin = () => {
+    localStorage.setItem('loggedIn', 'true');
+    setIsLoggedIn(true);
+    setTasks(loadTasks()); // Load tasks after login
+  };
+
+  const handleLogout = () => {
+    localStorage.removeItem('loggedIn');
+    setIsLoggedIn(false);
+  };
+
+  if (!isLoggedIn) {
+    return <Login onLogin={handleLogin} />;
+  }
+
   return (
     <div className="container">
       <h1>Smart Task Manager</h1>
-      <TaskForm onSave={addOrUpdateTask} />
+      <button onClick={handleLogout} style={{ float: 'right', marginBottom: '10px' }}>Logout</button>
+      <TaskForm onSave={addOrUpdateTask} taskToEdit={taskToEdit} setTaskToEdit={setTaskToEdit} />
       <FilterBar setFilter={setFilter} />
       <TaskList
         tasks={tasks}
         filter={filter}
         onDelete={deleteTask}
         onToggleComplete={toggleComplete}
-        onEdit={addOrUpdateTask}
+        onEdit={setTaskToEdit}
       />
     </div>
   );

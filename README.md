@@ -1,70 +1,123 @@
-# Getting Started with Create React App
+# 🚀 Smart Task Manager
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+A clean, responsive, and interactive task manager built using React. This project was developed for the **Tech Pioneer Program 2025 – Case Study Round (Jeeny)**.
 
-## Available Scripts
+---
 
-In the project directory, you can run:
+## 🔧 Features
 
-### `npm start`
+- Add, edit, and delete tasks
+- Mark tasks as complete or incomplete
+- Filter tasks by category and deadline
+- Toast notifications for user actions
+- Data persists in localStorage (even after refresh)
+- Fully responsive layout for mobile, tablet, and desktop
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+---
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## 🧠 Tech Stack
 
-### `npm test`
+- **Frontend:** React.js
+- **State Management:** React Hooks (`useState`, `useEffect`)
+- **Data Persistence:** `localStorage`
+- **Styling:** CSS (Glassmorphism theme with dark mode via CSS variables)
+- **Data Handling:** JavaScript
+- **Notifications:** `react-toastify`
+- **Authentication:** Mock login system using localStorage
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+---
 
-### `npm run build`
+## ▶️ How to Run the Project
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+To run the project on your local machine:
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+1. Visit [https://github.com/IshikaKirpalani11/smart-task-manager](https://github.com/IshikaKirpalani11/smart-task-manager)
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+2. Download the code as a ZIP file or clone the repository using Git.
 
-### `npm run eject`
+3. Open the project folder (`smart-task-manager`) in Visual Studio Code or any code editor.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+4. Make sure you have Node.js installed. Then, in your terminal (inside the project folder), install the required dependencies by running:
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+   → `npm install`
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+5. Once installed, start the development server by running:
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+   → `npm start`
 
-## Learn More
+6. The app will open automatically in your browser at `http://localhost:3000`. If it doesn’t, open your browser and enter that URL manually.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+---
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+## 🔐 Login Credentials (Mock)
 
-### Code Splitting
+This app uses a simple login system. Use the following credentials to log in:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+- **Email:** `user@demo.com`
+- **Password:** `123456`
 
-### Analyzing the Bundle Size
+---
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+## 📌 Assumptions Made
 
-### Making a Progressive Web App
+- The app supports one user session at a time.
+- Tasks are stored locally using `localStorage` for simplicity and speed.
+- Deadline reminders are visual (no calendar integrations).
+- Time is handled in the user's local timezone.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+---
 
-### Advanced Configuration
+## 🌟 Improvements If I Had More Time
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+- Integrate Firebase for multi-user login and cloud-based task syncing
+- Enable collaboration (assign tasks, share with team members)
+- Build a Kanban board or calendar view for more advanced task organization
+- Add animations using Framer Motion for smoother transitions and better UX
 
-### Deployment
+---
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+## 📱 Mobile Responsiveness
 
-### `npm run build` fails to minify
+The UI is designed to work seamlessly across all screen sizes. It includes:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+- Fully responsive layouts using media queries
+- Inputs and buttons adjust for small screens
+- Tested on Chrome DevTools using iPhone, Android, and tablet views
+
+---
+
+## 📷 Demo Video
+
+🎥 **[Watch the full demo here](#)**  
+_(Replace this with your Loom or YouTube video link before submission)_
+
+---
+
+## 📁 Project Structure Overview
+
+smart-task-manager/
+├── public/
+│ └── index.html, favicon, assets
+├── src/
+│ ├── components/
+│ │ ├── TaskForm.jsx
+│ │ ├── TaskList.jsx
+│ │ ├── FilterBar.jsx
+│ │ ├── Login.jsx
+│ ├── utils/
+│ │ └── storage.js
+│ ├── styles.css
+│ ├── theme.css
+│ ├── App.jsx
+│ └── index.js
+
+---
+
+## 🤝 License
+
+This project is free to use for educational and demo purposes only.
+
+---
+
+> Developed by **Ishika Kirpalani**  
+> GIKI | Tech Pioneer Program 2025

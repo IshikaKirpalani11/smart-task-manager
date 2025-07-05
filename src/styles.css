@@ -1,41 +1,74 @@
+/* Global background with dark overlay for premium feel */
 body {
-  font-family: Arial, sans-serif;
-  background: #f5f5f5;
   margin: 0;
   padding: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('./assets/1.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  color: #222;
 }
 
+/* Glassmorphism container */
 .container {
-  padding: 20px;
-  max-width: 700px;
-  margin: auto;
-  background: white;
-  margin-top: 40px;
-  border-radius: 8px;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(12px);
+  background: rgba(255, 255, 255, 0.75);
+  padding: 30px;
+  max-width: 720px;
+  margin: 60px auto;
+  border-radius: 16px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+  position: relative;
 }
 
+/* Heading */
+h1 {
+  text-align: center;
+  margin-bottom: 30px;
+  font-size: 28px;
+  color: #333;
+}
+
+/* Form styling */
 .task-form input,
 .task-form select {
-  margin-right: 10px;
-  padding: 8px;
-  margin-bottom: 8px;
+  padding: 12px;
+  margin-bottom: 12px;
+  width: 100%;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 15px;
 }
 
 .task-form button {
-  padding: 8px 12px;
-  background-color: #007bff;
-  color: white;
+  background: linear-gradient(to right, #007bff, #0056b3);
+  color: #fff;
+  padding: 12px 20px;
   border: none;
-  border-radius: 4px;
+  border-radius: 8px;
   cursor: pointer;
+  font-weight: bold;
+  transition: background 0.3s ease;
 }
 
+.task-form button:hover {
+  background: linear-gradient(to right, #0056b3, #004494);
+}
+
+/* Task list card */
 .task-list .task {
-  background: #f0f0f0;
-  padding: 10px;
-  margin: 10px 0;
-  border-radius: 6px;
+  background: #ffffffd9;
+  padding: 15px 20px;
+  margin-bottom: 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  transition: transform 0.2s ease;
+}
+
+.task-list .task:hover {
+  transform: translateY(-2px);
 }
 
 .task-list .task.completed {
@@ -43,20 +76,143 @@ body {
   opacity: 0.6;
 }
 
+/* Task action buttons */
 .task-list button {
-  margin-right: 10px;
-  padding: 6px 10px;
+  margin: 6px 8px 0 0;
+  padding: 8px 12px;
+  font-size: 14px;
   border: none;
-  border-radius: 4px;
+  border-radius: 6px;
   cursor: pointer;
+  font-weight: bold;
+  transition: opacity 0.2s ease;
 }
 
+.task-list button:hover {
+  opacity: 0.85;
+}
+
+.task-list .task button:nth-child(1) {
+  background-color: #28a745;
+  color: white;
+}
+
+.task-list .task button:nth-child(2) {
+  background-color: #ffc107;
+  color: black;
+}
+
+.task-list .task button:nth-child(3) {
+  background-color: #dc3545;
+  color: white;
+}
+
+/* Category badges */
+.category-badge {
+  display: inline-block;
+  padding: 4px 10px;
+  font-size: 13px;
+  border-radius: 50px;
+  color: white;
+  margin-bottom: 10px;
+  font-weight: 600;
+}
+
+.category-Work {
+  background-color: #007bff;
+}
+
+.category-Personal {
+  background-color: #17a2b8;
+}
+
+.category-Learning {
+  background-color: #6f42c1;
+}
+
+/* Filter bar styling */
 .filter-bar {
+  display: flex;
+  gap: 10px;
   margin-bottom: 20px;
+  flex-wrap: wrap;
 }
 
 .filter-bar select,
 .filter-bar input[type="date"] {
-  margin-right: 10px;
-  padding: 6px;
+  padding: 10px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  flex: 1;
+}
+
+/* Login Box */
+.login-box {
+  max-width: 360px;
+  margin: 100px auto;
+  background: rgba(255,255,255,0.9);
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 8px 30px rgba(0,0,0,0.15);
+  text-align: center;
+}
+
+.login-box input {
+  display: block;
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 16px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+}
+
+.login-box button {
+  padding: 12px 20px;
+  background: linear-gradient(to right, #007bff, #0056b3);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.login-box button:hover {
+  background: linear-gradient(to right, #0056b3, #004494);
+}
+
+/* Mobile styles */
+@media (max-width: 600px) {
+  .container {
+    padding: 20px;
+    margin-top: 30px;
+  }
+
+  .task-form input,
+  .task-form select,
+  .task-form button {
+    width: 100%;
+    margin-right: 0;
+  }
+
+  .filter-bar {
+    flex-direction: column;
+  }
+
+  .task-list button {
+    width: 100%;
+    margin: 5px 0;
+  }
+
+  .task-list .task {
+    padding: 15px;
+  }
+}
+/* Subtle button animation */
+button {
+  transition: transform 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease;
+}
+
+button:hover {
+  transform: translateY(-2px) scale(1.02);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
 }
