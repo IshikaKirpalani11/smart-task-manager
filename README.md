@@ -89,7 +89,7 @@ The UI is designed to work seamlessly across all screen sizes. It includes:
 ## 📷 Demo Video
 
 🎥 **[Watch the full demo here](#)**  
-_(Replace this with your Loom or YouTube video link before submission)_
+_(https://drive.google.com/file/d/1psek6NJzVokMcgs2Ht5cmRFhpDAfsr0O/view?usp=sharing)_
 
 ---
 
